@@ -1,16 +1,7 @@
 /* Dark Mode Styles */
 body {
-    background-color: #1a1a1a; /* Dark background color */
+    background-color: #313338; /* Dark background color */
     color: #ffffff; /* Light text color */
-}
-
-.main {
-    max-width: 400px; /* Adjust the maximum width as needed */
-    margin: 20px auto;
-    background-color: #333; /* Darker container background color */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for a subtle lift */
 }
 
 form {
@@ -19,17 +10,26 @@ form {
 }
 
 #message_box {
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #555; /* Darker border color for input */
+    margin-bottom: 20px;
+    width: 90%;
+    border: 1px solid #383a40; /* Darker border color for input */
     border-radius: 5px;
-    background-color: #444; /* Darker input background color */
+    background-color: #383a40; /* Darker input background color */
     color: #ffffff; /* Light text color */
+    box-shadow: 5px 5px 30px rgba(49, 49, 49, 0.815);
 }
 
 button {
+    visibility: hidden;
     padding: 10px;
-    background-color: #007bff; /* Accent color for the button */
+    background-color: #688d67; /* Accent color for the button */
     color: #ffffff; /* Light text color */
     border: none;
     border-radius: 5px;
