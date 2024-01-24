@@ -1,23 +1,26 @@
-// let socket = io();
-// console.log(socket);
-// let form = document.getElementById('chatForm');
-// let messageBoxValue = document.getElementById('message_box').value;
+let socket = io();
+let form = document.getElementById('chatForm');
+let input = document.getElementById('message_box');
 
-// form.addEventListener('submit', (e)=>{
-//     e.preventDefault();
-//     socket.emit('message', messageBoxValue);
-// });
+function displayMessage(message){
+    const chats = document.getElementById('chats');
+    const messageLi = document.createElement('li');
+    const messageLiTextNode = document.createTextNode(message);
+    messageLi.appendChild(messageLiTextNode);
+    chats.appendChild(messageLi);
+    // chats.classList.add('rightMessage');
+}
 
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+if (input.value) {
+    displayMessage(input.value);
+    socket.emit('message', input.value);
+    input.value = '';
+}
+}); 
 
-var socket = io();
-
-  var form = document.getElementById('chatForm');
-  var input = document.getElementById('message_box');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (input.value) {
-      socket.emit('message', input.value);
-      input.value = '';
-    }
-  });
+socket.on('showMessage', (value)=>{
+    console.log('inside on showMessage');
+    displayMessage(value);
+})

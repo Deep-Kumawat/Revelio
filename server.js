@@ -15,6 +15,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
+    let messageArr = [];
     console.log('a user connected and the below thingy is the socketid');
     console.log(socket.id);
     socket.on('disconnect', () => {
@@ -22,6 +23,10 @@ io.on('connection', (socket) => {
     })
     socket.on('message', (value)=>{
         console.log(`recieved this message: ${value}`);
+        messageArr.push(value);
+        // we need to add this message to html page
+        // socket.emit('showMessage', messageArr);
+        socket.broadcast.emit('showMessage', value);
     });
 });
 app.get('/', (req, res) => {
