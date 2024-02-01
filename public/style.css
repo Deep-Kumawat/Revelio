@@ -18,41 +18,49 @@ ul{
     margin: 12px;
     word-wrap: break-word;
 }
-.rightMessage{
-    border: #0056b3 5px solid;
-}
-.leftMessage{
-    display: flex;
-    justify-content: flex-start;
-}
+
 
 #message_box {
-    position: absolute;
-    bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
+    width: auto;
     padding: 10px;
-    margin-bottom: 20px;
-    width: 90%;
     border: 1px solid #383a40; /* Darker border color for input */
     border-radius: 5px;
     background-color: #383a40; /* Darker input background color */
     color: #ffffff; /* Light text color */
     box-shadow: 5px 5px 30px rgba(49, 49, 49, 0.815);
 }
+/* 
+#typingDiv {
+    visibility: visible;
+    font-size: small;
+    color: #7e8086;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 35px;
+    padding: 20px;
+    border: #313338 solid 1px;
+} */
 
-button {
-    visibility: hidden;
-    padding: 10px;
-    background-color: #688d67; /* Accent color for the button */
-    color: #ffffff; /* Light text color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.typingDiv {
+    display: grid;
+    grid-auto-flow: row;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 90%;
+
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-bottom: 20px;
 }
 
-button:hover {
-    background-color: #0056b3; /* Darker accent color on hover */
+#typingTextDiv {
+    visibility: hidden;
+    padding-bottom: 3px;
+    font-size: small;
+    color: #7e8086;
 }
